@@ -183,7 +183,7 @@
             this.btnAdjuntar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnAdjuntar.TabIndex = 2;
             this.btnAdjuntar.TabStop = false;
-            this.btnAdjuntar.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.btnAdjuntar.Click += new System.EventHandler(this.btnExaminar_Click);
             // 
             // btnModo
             // 

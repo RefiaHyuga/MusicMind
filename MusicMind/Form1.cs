@@ -43,15 +43,18 @@ namespace MusicMind
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e) {
+        private void btnExaminar_Click(object sender, EventArgs e)
+        {
             OpenFileDialog CajaDeBusquedaDeArchivos = new OpenFileDialog();
             CajaDeBusquedaDeArchivos.Multiselect = true;
-            if (CajaDeBusquedaDeArchivos.ShowDialog()==System.Windows.Forms.DialogResult.OK) {
+            if (CajaDeBusquedaDeArchivos.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
                 ArchivosMP3 = CajaDeBusquedaDeArchivos.SafeFileNames;
                 rutasArchivosMP3 = CajaDeBusquedaDeArchivos.FileNames;
                 listCanciones.Items.Clear();
-                foreach(var ArchivoMP3 in ArchivosMP3) {
-                    listCanciones.Items.Add(ArchivosMP3);
+                foreach (var ArchivoMP3 in ArchivosMP3)
+                {
+                    listCanciones.Items.Add(ArchivoMP3);
                 }
                 Reproductor.URL = rutasArchivosMP3[0];
                 listCanciones.SelectedIndex = 0;
@@ -128,26 +131,14 @@ namespace MusicMind
         public void mtrackcolores(XComponent.SliderBar.MACTrackBar mtrack, byte valor)
         {
             mtrack.Value = valor;
-            if (valor < 14) {
+            if (valor < 25) {
                 mtrack.TrackerColor = Color.Red;
             }
-            else if(valor < 28) {
-                mtrack.TrackerColor = Color.Orange;
-            }
-            else if (valor < 42) {
-                mtrack.TrackerColor = Color.Yellow;
-            }
-            else if (valor < 56) {
-                mtrack.TrackerColor = Color.Green;
-            }
-            else if (valor < 70) {
-                mtrack.TrackerColor = Color.Aqua;
-            }
-            else if (valor < 84) {
-                mtrack.TrackerColor = Color.Indigo;
+            else if(valor < 75) {
+                mtrack.TrackerColor = Color.Gray;
             }
             else {
-                mtrack.TrackerColor = Color.Violet;
+                mtrack.TrackerColor = Color.Green;
             }
         }
 
@@ -280,6 +271,9 @@ namespace MusicMind
                     Conectado = false;
                     btnConectado.Image = Properties.Resources.nosignal_v1;
                     btnEmepzar.Image = Properties.Resources.btnAceptar;
+                    poorSig = 100;
+                    Atencion = 0;
+                    Meditacion = 0;
                     break;
             }
             
@@ -293,7 +287,10 @@ namespace MusicMind
 
             // Blink detection needs to be manually turned on
             connector.setBlinkDetectionEnabled(true);
-            while (Conectado);
+            while (Conectado) {
+                Thread.Sleep(120000);
+            };
+            connector.Close();
             //Environment.Exit(0);
         }
 
@@ -312,25 +309,30 @@ namespace MusicMind
             {
                 case 1:
                     btnModo.Text = "Modo Concentracion";
+                    lbCancion.Text = " ";
                     Modo = 2;
                     Reproductor.URL = @".\Music\Concentracion.m4a";
                     Reproductor.Ctlcontrols.play();
                     btnPlay.Image = Properties.Resources.Button_4_512; //boton pause
                     btnAdjuntar.Visible = false;
+                    listCanciones.Visible = false;
                     Play = true;
                     break;
                 case 2:
                     btnModo.Text = "Modo Relajacion";
+                    lbCancion.Text = " ";
                     Modo = 3;
                     Reproductor.URL = @".\Music\Relajacion.m4a";
                     Reproductor.Ctlcontrols.play();
                     btnPlay.Image = Properties.Resources.Button_4_512; //boton pause
                     btnAdjuntar.Visible = false;
+                    listCanciones.Visible = false;
                     Play = true;
                     break;
                 case 3:
                     btnModo.Text = "Modo Reproduccion";
                     btnAdjuntar.Visible = true;
+                    listCanciones.Visible = true;
                     lbCancion.Text = "Pulsa en examinar para selecionar la cancion que deses";
                     Reproductor.Ctlcontrols.stop();
                     Play = false;
