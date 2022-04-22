@@ -1,0 +1,55 @@
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\bin\Debug\MusicMind.exe.config
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\bin\Debug\MusicMind.exe
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\bin\Debug\MusicMind.pdb
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\bin\Debug\Interop.WMPLib.dll
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\bin\Debug\AxInterop.WMPLib.dll
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\MusicMind.csprojResolveAssemblyReference.cache
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\Interop.WMPLib.dll
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\AxInterop.WMPLib.dll
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\MusicMind.csproj.ResolveComReference.cache
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\MusicMind.Form1.resources
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\MusicMind.Properties.Resources.resources
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\MusicMind.csproj.GenerateResource.Cache
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\MusicMind.exe
+c:\users\refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\obj\Debug\MusicMind.pdb
+C:\Users\Refia\documents\visual studio 2015\Projects\MusicMind\MusicMind\bin\Debug\MACTrackBarLib.dll
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\bin\Debug\MusicMind.exe.config
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\Interop.WMPLib.dll
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\MusicMind.csproj.ResolveComReference.cache
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\MusicMind.exe
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\MusicMind.pdb
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\bin\Debug\MusicMind.exe
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\bin\Debug\MusicMind.pdb
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\bin\Debug\MACTrackBarLib.dll
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\bin\Debug\Interop.WMPLib.dll
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\MusicMind.csprojResolveAssemblyReference.cache
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\MusicMind.Form1.resources
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\MusicMind.Properties.Resources.resources
+C:\Users\Lyoko\Dropbox\Universidad\MusicMind\MusicMind\obj\Debug\MusicMind.csproj.GenerateResource.Cache
+C:\Users\Refia\Desktop\MusicMind\MusicMind\bin\Debug\MusicMind.exe.config
+C:\Users\Refia\Desktop\MusicMind\MusicMind\obj\Debug\Interop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind\MusicMind\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind\MusicMind\obj\Debug\MusicMind.csproj.ResolveComReference.cache
+C:\Users\Refia\Desktop\MusicMind\MusicMind\obj\Debug\MusicMind.exe
+C:\Users\Refia\Desktop\MusicMind\MusicMind\obj\Debug\MusicMind.pdb
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\MusicMind.exe.config
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\Interop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\MusicMind.csproj.ResolveComReference.cache
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\MusicMind.exe
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\MusicMind.pdb
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\MusicMind.exe
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\MusicMind.pdb
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\MACTrackBarLib.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\ThinkGear.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\Jayrock.Json.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\NLog.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\NLog.xml
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\Interop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\MusicMind.csprojResolveAssemblyReference.cache
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\MusicMind.Form1.resources
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\MusicMind.Properties.Resources.resources
+C:\Users\Refia\Desktop\MusicMind - copia\MusicMind\obj\Debug\MusicMind.csproj.GenerateResource.Cache
