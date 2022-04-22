@@ -43,6 +43,10 @@
             this.btnModo = new System.Windows.Forms.Button();
             this.btnConectado = new System.Windows.Forms.PictureBox();
             this.btnEmepzar = new System.Windows.Forms.PictureBox();
+            this.mtrackAtencion = new XComponent.SliderBar.MACTrackBar();
+            this.mtrackRelajacion = new XComponent.SliderBar.MACTrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbRelajacion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
@@ -66,9 +70,9 @@
             // listCanciones
             // 
             this.listCanciones.FormattingEnabled = true;
-            this.listCanciones.Location = new System.Drawing.Point(315, 49);
+            this.listCanciones.Location = new System.Drawing.Point(84, 202);
             this.listCanciones.Name = "listCanciones";
-            this.listCanciones.Size = new System.Drawing.Size(169, 82);
+            this.listCanciones.Size = new System.Drawing.Size(109, 82);
             this.listCanciones.TabIndex = 1;
             this.listCanciones.SelectedIndexChanged += new System.EventHandler(this.listCanciones_SelectedIndexChanged);
             // 
@@ -172,7 +176,7 @@
             // btnAdjuntar
             // 
             this.btnAdjuntar.Image = global::MusicMind.Properties.Resources.Button_11_512;
-            this.btnAdjuntar.Location = new System.Drawing.Point(169, 12);
+            this.btnAdjuntar.Location = new System.Drawing.Point(15, 12);
             this.btnAdjuntar.Name = "btnAdjuntar";
             this.btnAdjuntar.Size = new System.Drawing.Size(43, 41);
             this.btnAdjuntar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -182,12 +186,13 @@
             // 
             // btnModo
             // 
-            this.btnModo.Location = new System.Drawing.Point(12, 12);
+            this.btnModo.Location = new System.Drawing.Point(64, 12);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(151, 41);
             this.btnModo.TabIndex = 10;
-            this.btnModo.Text = "Modo Concentracion";
+            this.btnModo.Text = "Modo Reproduccion";
             this.btnModo.UseVisualStyleBackColor = true;
+            this.btnModo.Click += new System.EventHandler(this.btnModo_Click);
             // 
             // btnConectado
             // 
@@ -202,7 +207,7 @@
             // btnEmepzar
             // 
             this.btnEmepzar.Image = global::MusicMind.Properties.Resources.btnAceptar;
-            this.btnEmepzar.Location = new System.Drawing.Point(92, 137);
+            this.btnEmepzar.Location = new System.Drawing.Point(30, 125);
             this.btnEmepzar.Name = "btnEmepzar";
             this.btnEmepzar.Size = new System.Drawing.Size(100, 76);
             this.btnEmepzar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,11 +215,81 @@
             this.btnEmepzar.TabStop = false;
             this.btnEmepzar.Click += new System.EventHandler(this.btnEmepzar_Click);
             // 
+            // mtrackAtencion
+            // 
+            this.mtrackAtencion.BackColor = System.Drawing.Color.Transparent;
+            this.mtrackAtencion.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.mtrackAtencion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtrackAtencion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.mtrackAtencion.IndentHeight = 6;
+            this.mtrackAtencion.Location = new System.Drawing.Point(339, 112);
+            this.mtrackAtencion.Maximum = 100;
+            this.mtrackAtencion.Minimum = 0;
+            this.mtrackAtencion.Name = "mtrackAtencion";
+            this.mtrackAtencion.Size = new System.Drawing.Size(312, 22);
+            this.mtrackAtencion.TabIndex = 13;
+            this.mtrackAtencion.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.mtrackAtencion.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.mtrackAtencion.TickHeight = 4;
+            this.mtrackAtencion.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.mtrackAtencion.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mtrackAtencion.TrackerSize = new System.Drawing.Size(10, 10);
+            this.mtrackAtencion.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.mtrackAtencion.TrackLineHeight = 3;
+            this.mtrackAtencion.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.mtrackAtencion.Value = 0;
+            // 
+            // mtrackRelajacion
+            // 
+            this.mtrackRelajacion.BackColor = System.Drawing.Color.Transparent;
+            this.mtrackRelajacion.BorderColor = System.Drawing.SystemColors.ActiveBorder;
+            this.mtrackRelajacion.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtrackRelajacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
+            this.mtrackRelajacion.IndentHeight = 6;
+            this.mtrackRelajacion.Location = new System.Drawing.Point(339, 150);
+            this.mtrackRelajacion.Maximum = 100;
+            this.mtrackRelajacion.Minimum = 0;
+            this.mtrackRelajacion.Name = "mtrackRelajacion";
+            this.mtrackRelajacion.Size = new System.Drawing.Size(312, 22);
+            this.mtrackRelajacion.TabIndex = 14;
+            this.mtrackRelajacion.TextTickStyle = System.Windows.Forms.TickStyle.None;
+            this.mtrackRelajacion.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
+            this.mtrackRelajacion.TickHeight = 4;
+            this.mtrackRelajacion.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.mtrackRelajacion.TrackerColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.mtrackRelajacion.TrackerSize = new System.Drawing.Size(10, 10);
+            this.mtrackRelajacion.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.mtrackRelajacion.TrackLineHeight = 3;
+            this.mtrackRelajacion.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.mtrackRelajacion.Value = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(284, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Atencion";
+            // 
+            // lbRelajacion
+            // 
+            this.lbRelajacion.AutoSize = true;
+            this.lbRelajacion.Location = new System.Drawing.Point(276, 150);
+            this.lbRelajacion.Name = "lbRelajacion";
+            this.lbRelajacion.Size = new System.Drawing.Size(57, 13);
+            this.lbRelajacion.TabIndex = 16;
+            this.lbRelajacion.Text = "Relajacion";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 317);
+            this.Controls.Add(this.lbRelajacion);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mtrackRelajacion);
+            this.Controls.Add(this.mtrackAtencion);
             this.Controls.Add(this.btnEmepzar);
             this.Controls.Add(this.btnConectado);
             this.Controls.Add(this.btnModo);
@@ -257,6 +332,10 @@
         private System.Windows.Forms.Button btnModo;
         private System.Windows.Forms.PictureBox btnConectado;
         private System.Windows.Forms.PictureBox btnEmepzar;
+        private XComponent.SliderBar.MACTrackBar mtrackAtencion;
+        private XComponent.SliderBar.MACTrackBar mtrackRelajacion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbRelajacion;
     }
 }
 

@@ -91,9 +91,3 @@ C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj
 C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj\Debug\MusicMind.Form1.resources
 C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj\Debug\MusicMind.Properties.Resources.resources
 C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj\Debug\MusicMind.csproj.GenerateResource.Cache
-C:\Users\Refia\Desktop\MusicMind v1 Con hilos\MusicMind\bin\Debug\MusicMind.exe.config
-C:\Users\Refia\Desktop\MusicMind v1 Con hilos\MusicMind\obj\Debug\Interop.WMPLib.dll
-C:\Users\Refia\Desktop\MusicMind v1 Con hilos\MusicMind\obj\Debug\AxInterop.WMPLib.dll
-C:\Users\Refia\Desktop\MusicMind v1 Con hilos\MusicMind\obj\Debug\MusicMind.csproj.ResolveComReference.cache
-C:\Users\Refia\Desktop\MusicMind v1 Con hilos\MusicMind\obj\Debug\MusicMind.exe
-C:\Users\Refia\Desktop\MusicMind v1 Con hilos\MusicMind\obj\Debug\MusicMind.pdb

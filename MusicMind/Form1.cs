@@ -18,17 +18,24 @@ namespace MusicMind
     public partial class Form1 : Form {
         bool Play = false;
         bool Sound = true;
+        int Modo = 1;
         string[] ArchivosMP3;
         string[] rutasArchivosMP3;
 
+        bool Conectado = false;
+
         static Connector connector;
         static byte poorSig;
+        static byte Atencion;
+        static byte Meditacion;
 
         public Form1() {
             InitializeComponent();
 
-            // Initialize a new Connector and add event handlers
+            poorSig = 100;
+            Conectado = false;
 
+            // Initialize a new Connector and add event handlers
             connector = new Connector();
             connector.DeviceConnected += new EventHandler(OnDeviceConnected);
             connector.DeviceConnectFail += new EventHandler(OnDeviceFail);
@@ -83,7 +90,19 @@ namespace MusicMind
             mtrackVolumen.Value = Reproductor.settings.volume;
         }
         public void ActualizarDatosTrack() {
-            lbCancion.Text = " " + poorSig;
+            lbCancion.Text = " " + poorSig+ " " +Atencion+ " " +Meditacion;
+            mtrackcolores(mtrackAtencion,Atencion);
+            mtrackcolores(mtrackRelajacion,Meditacion);
+
+            if (Conectado)
+            {
+                if (poorSig == 0)
+                {
+                    btnConectado.Image = Properties.Resources.connected_v1;
+                }
+                btnConectado.Image = Properties.Resources.connecting2_v1;
+            }
+
             if (Reproductor.playState == WMPLib.WMPPlayState.wmppsPlaying) {
                 //Control del tiempo maximo del mp3 actual
                 mtrackCancion.Maximum = (int)Reproductor.Ctlcontrols.currentItem.duration;
@@ -95,6 +114,32 @@ namespace MusicMind
             else if (Reproductor.playState == WMPLib.WMPPlayState.wmppsStopped) {
                 timer1.Stop();
                 mtrackCancion.Value = 0;
+            }
+        }
+
+        public void mtrackcolores(XComponent.SliderBar.MACTrackBar mtrack, byte valor)
+        {
+            mtrack.Value = valor;
+            if (valor < 14) {
+                mtrack.TrackerColor = Color.Red;
+            }
+            else if(valor < 28) {
+                mtrack.TrackerColor = Color.Orange;
+            }
+            else if (valor < 42) {
+                mtrack.TrackerColor = Color.Yellow;
+            }
+            else if (valor < 56) {
+                mtrack.TrackerColor = Color.Green;
+            }
+            else if (valor < 70) {
+                mtrack.TrackerColor = Color.Aqua;
+            }
+            else if (valor < 84) {
+                mtrack.TrackerColor = Color.Indigo;
+            }
+            else {
+                mtrack.TrackerColor = Color.Violet;
             }
         }
 
@@ -190,10 +235,12 @@ namespace MusicMind
                 if (tgParser.ParsedData[i].ContainsKey("Attention"))
                 {
                     Console.WriteLine("Att Value:" + tgParser.ParsedData[i]["Attention"]);
+                    Atencion = (byte)tgParser.ParsedData[i]["Attention"];
                 }
                 if (tgParser.ParsedData[i].ContainsKey("Meditation"))
                 {
                     Console.WriteLine("Med Value:" + tgParser.ParsedData[i]["Meditation"]);
+                    Meditacion = (byte)tgParser.ParsedData[i]["Meditation"];
                 }
                 if (tgParser.ParsedData[i].ContainsKey("EegPowerDelta"))
                 {
@@ -211,23 +258,26 @@ namespace MusicMind
 
         private void btnEmepzar_Click(object sender, EventArgs e)
         {
-            Thread workerThread = new Thread(hilo);
-            workerThread.Start();
-            /*
-            // Scan for devices across COM ports
-            // The COM port named will be the first COM port that is checked.
-            connector.ConnectScan("COM40");
-
-            // Blink detection needs to be manually turned on
-            connector.setBlinkDetectionEnabled(true);
-            //Thread.Sleep(450000);
-
-            System.Console.WriteLine("Goodbye.");
+            Thread mindwave = new Thread(escanear);
+            switch (Conectado)
+            {
+                case false:
+                    mindwave.Start();
+                    Conectado = true;
+                    btnEmepzar.Image = Properties.Resources.btnCancelar;
+                    break;
+                case true:
+                    connector.Close();
+                    mindwave.Abort();
+                    Conectado = false;
+                    btnConectado.Image = Properties.Resources.nosignal_v1;
+                    btnEmepzar.Image = Properties.Resources.btnAceptar;
+                    break;
+            }
             
-            Environment.Exit(0);*/
         }
 
-        private void hilo()
+        private void escanear()
         {
             // Scan for devices across COM ports
             // The COM port named will be the first COM port that is checked.
@@ -235,9 +285,7 @@ namespace MusicMind
 
             // Blink detection needs to be manually turned on
             connector.setBlinkDetectionEnabled(true);
-            Thread.Sleep(450000);
-
-            System.Console.WriteLine("Goodbye.");
+            while (true);
 
             Environment.Exit(0);
 
@@ -245,15 +293,29 @@ namespace MusicMind
 
         public static void notConect()
         {
-            if (MessageBox.Show("Dispositivo no encontrado. Conecte el dispositivo.", "Dispositivo no encontrado",
-                  MessageBoxButtons.RetryCancel, MessageBoxIcon.Question)
-                  == DialogResult.Retry)
+            MessageBox.Show("Dispositivo no encontrado. Conecte el dispositivo.", "Dispositivo no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            connector.Close();
+            Application.Exit();
+            Environment.Exit(0);
+            
+        }
+
+        private void btnModo_Click(object sender, EventArgs e)
+        {
+            switch (Modo)
             {
-                Application.Exit();
-            }
-            else {
-                Application.Exit();
-                Environment.Exit(0);
+                case 1:
+                    btnModo.Text = "Modo Concentracion";
+                    Modo = 2;
+                    break;
+                case 2:
+                    btnModo.Text = "Modo Relajacion";
+                    Modo = 3;
+                    break;
+                case 3:
+                    btnModo.Text = "Modo Reproduccion";
+                    Modo = 1;
+                    break;
             }
         }
     }
