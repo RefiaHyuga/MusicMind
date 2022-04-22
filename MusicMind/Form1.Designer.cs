@@ -45,8 +45,9 @@
             this.btnEmepzar = new System.Windows.Forms.PictureBox();
             this.mtrackAtencion = new XComponent.SliderBar.MACTrackBar();
             this.mtrackRelajacion = new XComponent.SliderBar.MACTrackBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAtencion = new System.Windows.Forms.Label();
             this.lbRelajacion = new System.Windows.Forms.Label();
+            this.lbsignal = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
@@ -70,9 +71,9 @@
             // listCanciones
             // 
             this.listCanciones.FormattingEnabled = true;
-            this.listCanciones.Location = new System.Drawing.Point(84, 202);
+            this.listCanciones.Location = new System.Drawing.Point(30, 182);
             this.listCanciones.Name = "listCanciones";
-            this.listCanciones.Size = new System.Drawing.Size(109, 82);
+            this.listCanciones.Size = new System.Drawing.Size(197, 95);
             this.listCanciones.TabIndex = 1;
             this.listCanciones.SelectedIndexChanged += new System.EventHandler(this.listCanciones_SelectedIndexChanged);
             // 
@@ -130,9 +131,9 @@
             this.lbCancion.AutoSize = true;
             this.lbCancion.Location = new System.Drawing.Point(12, 70);
             this.lbCancion.Name = "lbCancion";
-            this.lbCancion.Size = new System.Drawing.Size(28, 13);
+            this.lbCancion.Size = new System.Drawing.Size(272, 13);
             this.lbCancion.TabIndex = 9;
-            this.lbCancion.Text = "-------";
+            this.lbCancion.Text = "Pulsa en examinar para selecionar la cancion que deses";
             // 
             // timer1
             // 
@@ -176,7 +177,7 @@
             // btnAdjuntar
             // 
             this.btnAdjuntar.Image = global::MusicMind.Properties.Resources.Button_11_512;
-            this.btnAdjuntar.Location = new System.Drawing.Point(15, 12);
+            this.btnAdjuntar.Location = new System.Drawing.Point(169, 12);
             this.btnAdjuntar.Name = "btnAdjuntar";
             this.btnAdjuntar.Size = new System.Drawing.Size(43, 41);
             this.btnAdjuntar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -186,7 +187,7 @@
             // 
             // btnModo
             // 
-            this.btnModo.Location = new System.Drawing.Point(64, 12);
+            this.btnModo.Location = new System.Drawing.Point(12, 12);
             this.btnModo.Name = "btnModo";
             this.btnModo.Size = new System.Drawing.Size(151, 41);
             this.btnModo.TabIndex = 10;
@@ -207,7 +208,7 @@
             // btnEmepzar
             // 
             this.btnEmepzar.Image = global::MusicMind.Properties.Resources.btnAceptar;
-            this.btnEmepzar.Location = new System.Drawing.Point(30, 125);
+            this.btnEmepzar.Location = new System.Drawing.Point(77, 87);
             this.btnEmepzar.Name = "btnEmepzar";
             this.btnEmepzar.Size = new System.Drawing.Size(100, 76);
             this.btnEmepzar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -263,14 +264,14 @@
             this.mtrackRelajacion.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
             this.mtrackRelajacion.Value = 0;
             // 
-            // label1
+            // lblAtencion
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(284, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Atencion";
+            this.lblAtencion.AutoSize = true;
+            this.lblAtencion.Location = new System.Drawing.Point(284, 112);
+            this.lblAtencion.Name = "lblAtencion";
+            this.lblAtencion.Size = new System.Drawing.Size(49, 13);
+            this.lblAtencion.TabIndex = 15;
+            this.lblAtencion.Text = "Atencion";
             // 
             // lbRelajacion
             // 
@@ -281,13 +282,23 @@
             this.lbRelajacion.TabIndex = 16;
             this.lbRelajacion.Text = "Relajacion";
             // 
+            // lbsignal
+            // 
+            this.lbsignal.AutoSize = true;
+            this.lbsignal.Location = new System.Drawing.Point(609, 75);
+            this.lbsignal.Name = "lbsignal";
+            this.lbsignal.Size = new System.Drawing.Size(13, 13);
+            this.lbsignal.TabIndex = 17;
+            this.lbsignal.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(663, 317);
+            this.Controls.Add(this.lbsignal);
             this.Controls.Add(this.lbRelajacion);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblAtencion);
             this.Controls.Add(this.mtrackRelajacion);
             this.Controls.Add(this.mtrackAtencion);
             this.Controls.Add(this.btnEmepzar);
@@ -334,8 +345,9 @@
         private System.Windows.Forms.PictureBox btnEmepzar;
         private XComponent.SliderBar.MACTrackBar mtrackAtencion;
         private XComponent.SliderBar.MACTrackBar mtrackRelajacion;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAtencion;
         private System.Windows.Forms.Label lbRelajacion;
+        private System.Windows.Forms.Label lbsignal;
     }
 }
 

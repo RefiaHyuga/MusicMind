@@ -91,3 +91,22 @@ C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj
 C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj\Debug\MusicMind.Form1.resources
 C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj\Debug\MusicMind.Properties.Resources.resources
 C:\Users\Refia\Desktop\MusicMind v1 Fusion - copia - copia - copia\MusicMind\obj\Debug\MusicMind.csproj.GenerateResource.Cache
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\MusicMind.exe.config
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\Interop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\MusicMind.csproj.ResolveComReference.cache
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\MusicMind.exe
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\MusicMind.pdb
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\MusicMind.exe
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\MusicMind.pdb
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\MACTrackBarLib.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\ThinkGear.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\Jayrock.Json.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\NLog.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\NLog.xml
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\Interop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\MusicMind.csprojResolveAssemblyReference.cache
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\MusicMind.Form1.resources
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\MusicMind.Properties.Resources.resources
+C:\Users\Refia\Desktop\MusicMind v2 - copia\MusicMind\obj\Debug\MusicMind.csproj.GenerateResource.Cache

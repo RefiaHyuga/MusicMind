@@ -49,6 +49,7 @@ namespace MusicMind
             if (CajaDeBusquedaDeArchivos.ShowDialog()==System.Windows.Forms.DialogResult.OK) {
                 ArchivosMP3 = CajaDeBusquedaDeArchivos.SafeFileNames;
                 rutasArchivosMP3 = CajaDeBusquedaDeArchivos.FileNames;
+                listCanciones.Items.Clear();
                 foreach(var ArchivoMP3 in ArchivosMP3) {
                     listCanciones.Items.Add(ArchivosMP3);
                 }
@@ -90,17 +91,24 @@ namespace MusicMind
             mtrackVolumen.Value = Reproductor.settings.volume;
         }
         public void ActualizarDatosTrack() {
-            lbCancion.Text = " " + poorSig+ " " +Atencion+ " " +Meditacion;
+            int sig = 100 - poorSig;
+            lbsignal.Text = " " + sig;
+            lblAtencion.Text = "Atencion " + Atencion;
+            lbRelajacion.Text = "Meditacion " + Meditacion;
             mtrackcolores(mtrackAtencion,Atencion);
             mtrackcolores(mtrackRelajacion,Meditacion);
 
             if (Conectado)
             {
-                if (poorSig == 0)
+                if (poorSig == 0 && Atencion!=0)
                 {
                     btnConectado.Image = Properties.Resources.connected_v1;
                 }
-                btnConectado.Image = Properties.Resources.connecting2_v1;
+                else
+                {
+                    btnConectado.Image = Properties.Resources.connecting2_v1;
+                }
+
             }
 
             if (Reproductor.playState == WMPLib.WMPPlayState.wmppsPlaying) {
@@ -285,10 +293,8 @@ namespace MusicMind
 
             // Blink detection needs to be manually turned on
             connector.setBlinkDetectionEnabled(true);
-            while (true);
-
-            Environment.Exit(0);
-
+            while (Conectado);
+            //Environment.Exit(0);
         }
 
         public static void notConect()
@@ -307,13 +313,27 @@ namespace MusicMind
                 case 1:
                     btnModo.Text = "Modo Concentracion";
                     Modo = 2;
+                    Reproductor.URL = @".\Music\Concentracion.m4a";
+                    Reproductor.Ctlcontrols.play();
+                    btnPlay.Image = Properties.Resources.Button_4_512; //boton pause
+                    btnAdjuntar.Visible = false;
+                    Play = true;
                     break;
                 case 2:
                     btnModo.Text = "Modo Relajacion";
                     Modo = 3;
+                    Reproductor.URL = @".\Music\Relajacion.m4a";
+                    Reproductor.Ctlcontrols.play();
+                    btnPlay.Image = Properties.Resources.Button_4_512; //boton pause
+                    btnAdjuntar.Visible = false;
+                    Play = true;
                     break;
                 case 3:
                     btnModo.Text = "Modo Reproduccion";
+                    btnAdjuntar.Visible = true;
+                    lbCancion.Text = "Pulsa en examinar para selecionar la cancion que deses";
+                    Reproductor.Ctlcontrols.stop();
+                    Play = false;
                     Modo = 1;
                     break;
             }
