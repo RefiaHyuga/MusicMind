@@ -125,6 +125,27 @@
   <ItemGroup>
     <None Include="Resources\sound-button-icon-sin.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connected_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connecting1_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connecting2_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connecting3_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nosignal_v1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnAceptar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnCancelar.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

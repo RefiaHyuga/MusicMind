@@ -63,6 +63,26 @@ namespace MusicMind.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap btnAceptar {
+            get {
+                object obj = ResourceManager.GetObject("btnAceptar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap btnCancelar {
+            get {
+                object obj = ResourceManager.GetObject("btnCancelar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Button_11_512 {
             get {
                 object obj = ResourceManager.GetObject("Button_11-512", resourceCulture);
@@ -96,6 +116,56 @@ namespace MusicMind.Properties {
         internal static System.Drawing.Bitmap Button_5_512 {
             get {
                 object obj = ResourceManager.GetObject("Button_5-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connected_v1 {
+            get {
+                object obj = ResourceManager.GetObject("connected_v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connecting1_v1 {
+            get {
+                object obj = ResourceManager.GetObject("connecting1_v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connecting2_v1 {
+            get {
+                object obj = ResourceManager.GetObject("connecting2_v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap connecting3_v1 {
+            get {
+                object obj = ResourceManager.GetObject("connecting3_v1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nosignal_v1 {
+            get {
+                object obj = ResourceManager.GetObject("nosignal_v1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

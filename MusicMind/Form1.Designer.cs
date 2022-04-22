@@ -40,11 +40,16 @@
             this.btnPlay = new System.Windows.Forms.PictureBox();
             this.btnVolumen = new System.Windows.Forms.PictureBox();
             this.btnAdjuntar = new System.Windows.Forms.PictureBox();
+            this.btnModo = new System.Windows.Forms.Button();
+            this.btnConectado = new System.Windows.Forms.PictureBox();
+            this.btnEmepzar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Reproductor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolumen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConectado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEmepzar)).BeginInit();
             this.SuspendLayout();
             // 
             // Reproductor
@@ -63,7 +68,7 @@
             this.listCanciones.FormattingEnabled = true;
             this.listCanciones.Location = new System.Drawing.Point(315, 49);
             this.listCanciones.Name = "listCanciones";
-            this.listCanciones.Size = new System.Drawing.Size(169, 238);
+            this.listCanciones.Size = new System.Drawing.Size(169, 82);
             this.listCanciones.TabIndex = 1;
             this.listCanciones.SelectedIndexChanged += new System.EventHandler(this.listCanciones_SelectedIndexChanged);
             // 
@@ -78,7 +83,7 @@
             this.mtrackCancion.Maximum = 10;
             this.mtrackCancion.Minimum = 0;
             this.mtrackCancion.Name = "mtrackCancion";
-            this.mtrackCancion.Size = new System.Drawing.Size(484, 22);
+            this.mtrackCancion.Size = new System.Drawing.Size(636, 22);
             this.mtrackCancion.TabIndex = 3;
             this.mtrackCancion.TextTickStyle = System.Windows.Forms.TickStyle.None;
             this.mtrackCancion.TickColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(146)))), ((int)(((byte)(148)))));
@@ -98,7 +103,7 @@
             this.mtrackVolumen.Font = new System.Drawing.Font("Verdana", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtrackVolumen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(125)))), ((int)(((byte)(123)))));
             this.mtrackVolumen.IndentHeight = 6;
-            this.mtrackVolumen.Location = new System.Drawing.Point(315, 21);
+            this.mtrackVolumen.Location = new System.Drawing.Point(470, 262);
             this.mtrackVolumen.Maximum = 100;
             this.mtrackVolumen.Minimum = 0;
             this.mtrackVolumen.Name = "mtrackVolumen";
@@ -121,9 +126,9 @@
             this.lbCancion.AutoSize = true;
             this.lbCancion.Location = new System.Drawing.Point(12, 70);
             this.lbCancion.Name = "lbCancion";
-            this.lbCancion.Size = new System.Drawing.Size(35, 13);
+            this.lbCancion.Size = new System.Drawing.Size(28, 13);
             this.lbCancion.TabIndex = 9;
-            this.lbCancion.Text = "label1";
+            this.lbCancion.Text = "-------";
             // 
             // timer1
             // 
@@ -134,7 +139,7 @@
             // btnStop
             // 
             this.btnStop.Image = global::MusicMind.Properties.Resources.Button_5_512;
-            this.btnStop.Location = new System.Drawing.Point(110, 12);
+            this.btnStop.Location = new System.Drawing.Point(315, 243);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(43, 41);
             this.btnStop.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +150,7 @@
             // btnPlay
             // 
             this.btnPlay.Image = global::MusicMind.Properties.Resources.Button_3_512;
-            this.btnPlay.Location = new System.Drawing.Point(61, 12);
+            this.btnPlay.Location = new System.Drawing.Point(266, 243);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(43, 41);
             this.btnPlay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -156,7 +161,7 @@
             // btnVolumen
             // 
             this.btnVolumen.Image = global::MusicMind.Properties.Resources.sound_button_icon_76357;
-            this.btnVolumen.Location = new System.Drawing.Point(282, 21);
+            this.btnVolumen.Location = new System.Drawing.Point(437, 262);
             this.btnVolumen.Name = "btnVolumen";
             this.btnVolumen.Size = new System.Drawing.Size(27, 22);
             this.btnVolumen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -167,7 +172,7 @@
             // btnAdjuntar
             // 
             this.btnAdjuntar.Image = global::MusicMind.Properties.Resources.Button_11_512;
-            this.btnAdjuntar.Location = new System.Drawing.Point(12, 12);
+            this.btnAdjuntar.Location = new System.Drawing.Point(169, 12);
             this.btnAdjuntar.Name = "btnAdjuntar";
             this.btnAdjuntar.Size = new System.Drawing.Size(43, 41);
             this.btnAdjuntar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,11 +180,44 @@
             this.btnAdjuntar.TabStop = false;
             this.btnAdjuntar.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // btnModo
+            // 
+            this.btnModo.Location = new System.Drawing.Point(12, 12);
+            this.btnModo.Name = "btnModo";
+            this.btnModo.Size = new System.Drawing.Size(151, 41);
+            this.btnModo.TabIndex = 10;
+            this.btnModo.Text = "Modo Concentracion";
+            this.btnModo.UseVisualStyleBackColor = true;
+            // 
+            // btnConectado
+            // 
+            this.btnConectado.Image = global::MusicMind.Properties.Resources.nosignal_v1;
+            this.btnConectado.Location = new System.Drawing.Point(583, 12);
+            this.btnConectado.Name = "btnConectado";
+            this.btnConectado.Size = new System.Drawing.Size(68, 56);
+            this.btnConectado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnConectado.TabIndex = 11;
+            this.btnConectado.TabStop = false;
+            // 
+            // btnEmepzar
+            // 
+            this.btnEmepzar.Image = global::MusicMind.Properties.Resources.btnAceptar;
+            this.btnEmepzar.Location = new System.Drawing.Point(92, 137);
+            this.btnEmepzar.Name = "btnEmepzar";
+            this.btnEmepzar.Size = new System.Drawing.Size(100, 76);
+            this.btnEmepzar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEmepzar.TabIndex = 12;
+            this.btnEmepzar.TabStop = false;
+            this.btnEmepzar.Click += new System.EventHandler(this.btnEmepzar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 317);
+            this.ClientSize = new System.Drawing.Size(663, 317);
+            this.Controls.Add(this.btnEmepzar);
+            this.Controls.Add(this.btnConectado);
+            this.Controls.Add(this.btnModo);
             this.Controls.Add(this.lbCancion);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.btnPlay);
@@ -197,6 +235,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnPlay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolumen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAdjuntar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnConectado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEmepzar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,6 +254,9 @@
         private System.Windows.Forms.PictureBox btnStop;
         private System.Windows.Forms.Label lbCancion;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnModo;
+        private System.Windows.Forms.PictureBox btnConectado;
+        private System.Windows.Forms.PictureBox btnEmepzar;
     }
 }
 

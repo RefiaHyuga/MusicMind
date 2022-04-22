@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.Threading;
+
+using NeuroSky.ThinkGear;
+using NeuroSky.ThinkGear.Algorithms;
+
 namespace MusicMind
 {
     public partial class Form1 : Form {
@@ -16,8 +21,19 @@ namespace MusicMind
         string[] ArchivosMP3;
         string[] rutasArchivosMP3;
 
+        static Connector connector;
+        static byte poorSig;
+
         public Form1() {
             InitializeComponent();
+
+            // Initialize a new Connector and add event handlers
+
+            connector = new Connector();
+            connector.DeviceConnected += new EventHandler(OnDeviceConnected);
+            connector.DeviceConnectFail += new EventHandler(OnDeviceFail);
+            connector.DeviceValidating += new EventHandler(OnDeviceValidating);
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e) {
@@ -67,6 +83,7 @@ namespace MusicMind
             mtrackVolumen.Value = Reproductor.settings.volume;
         }
         public void ActualizarDatosTrack() {
+            lbCancion.Text = " " + poorSig;
             if (Reproductor.playState == WMPLib.WMPPlayState.wmppsPlaying) {
                 //Control del tiempo maximo del mp3 actual
                 mtrackCancion.Maximum = (int)Reproductor.Ctlcontrols.currentItem.duration;
@@ -114,6 +131,129 @@ namespace MusicMind
                     Reproductor.settings.volume = 50;
                     Sound = true;
                     break;
+            }
+        }
+
+        // Called when a device is connected 
+        static void OnDeviceConnected(object sender, EventArgs e)
+        {
+            Connector.DeviceEventArgs de = (Connector.DeviceEventArgs)e;
+
+            Console.WriteLine("Device found on: " + de.Device.PortName);
+            de.Device.DataReceived += new EventHandler(OnDataReceived);
+        }
+
+        // Called when scanning fails
+        static void OnDeviceFail(object sender, EventArgs e)
+        {
+            Console.WriteLine("No devices found! :(");
+            connector.Close();
+            notConect();
+        }
+
+        // Called when each port is being validated
+        static void OnDeviceValidating(object sender, EventArgs e)
+        {
+            Console.WriteLine("Validating: ");
+        }
+
+        // Called when data is received from a device
+        static void OnDataReceived(object sender, EventArgs e)
+        {
+            //Device d = (Device)sender;
+
+            Device.DataEventArgs de = (Device.DataEventArgs)e;
+            NeuroSky.ThinkGear.DataRow[] tempDataRowArray = de.DataRowArray;
+
+            TGParser tgParser = new TGParser();
+            tgParser.Read(de.DataRowArray);
+
+            /* Loops through the newly parsed data of the connected headset*/
+            // The comments below indicate and can be used to print out the different data outputs. 
+
+            for (int i = 0; i < tgParser.ParsedData.Length; i++)
+            {
+                if (tgParser.ParsedData[i].ContainsKey("Raw"))
+                {
+                    //Console.WriteLine("Raw Value:" + tgParser.ParsedData[i]["Raw"]);
+                }
+                if (tgParser.ParsedData[i].ContainsKey("PoorSignal"))
+                {
+                    //The following line prints the Time associated with the parsed data
+                    //Console.WriteLine("Time:" + tgParser.ParsedData[i]["Time"]);
+
+                    //A Poor Signal value of 0 indicates that your headset is fitting properly
+                    Console.WriteLine("Poor Signal:" + tgParser.ParsedData[i]["PoorSignal"]);
+
+                    poorSig = (byte)tgParser.ParsedData[i]["PoorSignal"];
+                }
+                if (tgParser.ParsedData[i].ContainsKey("Attention"))
+                {
+                    Console.WriteLine("Att Value:" + tgParser.ParsedData[i]["Attention"]);
+                }
+                if (tgParser.ParsedData[i].ContainsKey("Meditation"))
+                {
+                    Console.WriteLine("Med Value:" + tgParser.ParsedData[i]["Meditation"]);
+                }
+                if (tgParser.ParsedData[i].ContainsKey("EegPowerDelta"))
+                {
+                    //Console.WriteLine("Delta: " + tgParser.ParsedData[i]["EegPowerDelta"]);
+                }
+
+                if (tgParser.ParsedData[i].ContainsKey("BlinkStrength"))
+                {
+                    //Console.WriteLine("Eyeblink " + tgParser.ParsedData[i]["BlinkStrength"]);
+                }
+
+            }
+
+        }
+
+        private void btnEmepzar_Click(object sender, EventArgs e)
+        {
+            Thread workerThread = new Thread(hilo);
+            workerThread.Start();
+            /*
+            // Scan for devices across COM ports
+            // The COM port named will be the first COM port that is checked.
+            connector.ConnectScan("COM40");
+
+            // Blink detection needs to be manually turned on
+            connector.setBlinkDetectionEnabled(true);
+            //Thread.Sleep(450000);
+
+            System.Console.WriteLine("Goodbye.");
+            
+            Environment.Exit(0);*/
+        }
+
+        private void hilo()
+        {
+            // Scan for devices across COM ports
+            // The COM port named will be the first COM port that is checked.
+            connector.ConnectScan("COM40");
+
+            // Blink detection needs to be manually turned on
+            connector.setBlinkDetectionEnabled(true);
+            Thread.Sleep(450000);
+
+            System.Console.WriteLine("Goodbye.");
+
+            Environment.Exit(0);
+
+        }
+
+        public static void notConect()
+        {
+            if (MessageBox.Show("Dispositivo no encontrado. Conecte el dispositivo.", "Dispositivo no encontrado",
+                  MessageBoxButtons.RetryCancel, MessageBoxIcon.Question)
+                  == DialogResult.Retry)
+            {
+                Application.Exit();
+            }
+            else {
+                Application.Exit();
+                Environment.Exit(0);
             }
         }
     }
